@@ -14,8 +14,7 @@ def main():
         for i, result in enumerate(results[1:], 1):
             print(f"Step {i}: {result}\n")
     else:
-        print("\nGenerated LinkedIn post:\n")
-        print(results)
+        print("Done!")
 
 if __name__ == "__main__":
     main()
