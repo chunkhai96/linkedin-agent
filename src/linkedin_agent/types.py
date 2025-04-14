@@ -7,4 +7,5 @@ class AgentState(TypedDict):
     next_step: str
     topic: str | None
     news_content: dict | None
+    selected_news: dict | None
     linkedin_post: str | None
