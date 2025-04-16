@@ -5,8 +5,9 @@ _ANALAYZE_NEWS_PROMPT = (
 )
 _GENERATE_POST_PROMPT = (
     "Based on the news analysis, write a LinkedIn post as if you're personally sharing your thoughts, takeaways, or reflections on the given topic title — not just reporting the news."
-    "The tone should feel human, conversational, and relatable, as if you're writing it for your network\n."
+    "The tone should feel human, conversational, friendly and relatable."
     "You can express curiosity, surprise, excitement, or even questions you’re pondering, as long as it's authentic and adds professional value."
+    "Do not start with Okay folks..., just start with your thoughts and insights."
     "Use light emojis if appropriate, include relevant hashtags, and wrap the post content only in pure text format with [START_POST] and [END_POST] markers."
 )
 _RANK_NEWS_PROMPT = (

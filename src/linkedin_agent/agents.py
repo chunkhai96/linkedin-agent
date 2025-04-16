@@ -124,7 +124,7 @@ class LinkedInPostAgent:
         workflow.add_edge("analyze", "select_news")
         workflow.add_edge("select_news", "generate_post")
         workflow.add_edge("generate_post", "post_to_linkedin")
-        workflow.add_edge("generate_post", END)
+        workflow.add_edge("post_to_linkedin", END)
         
         # Set entry point
         workflow.set_entry_point("search")
