@@ -30,6 +30,9 @@ class LinkedInClient:
             Exception: If posting fails
         """
         try:
+            # Replace problematic parentheses with alternatives
+            text = text.replace('(', '（').replace(')', '）')
+
             if use_legacy_api:
                 # Use legacy /ugcPosts endpoint
                 response = self.client.create(
