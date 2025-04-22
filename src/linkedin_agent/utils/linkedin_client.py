@@ -56,7 +56,7 @@ class LinkedInClient:
                     resource_path="/posts",
                     entity={
                         "author": self.person_urn,
-                        "lifecycleState": "PUBLISHED",
+                        "lifecycleState": "DRAFT",
                         "visibility": "PUBLIC",
                         "commentary": text,
                         "distribution": {
