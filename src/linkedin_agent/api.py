@@ -1,5 +1,5 @@
 from langchain_core.messages import HumanMessage
-from .agents import create_linkedin_post_agent
+from .agents.post_agent import create_linkedin_post_agent
 
 def create_post(topic: str, stream: bool = False) -> str:
     """Process news content and generate a LinkedIn post.

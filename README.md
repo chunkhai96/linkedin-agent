@@ -10,7 +10,7 @@ poetry install
 
 ## Usage
 ```python
-from linkedin_agent.agents import create_linkedin_post_agent
+from linkedin_agent.agents.post_agent import create_linkedin_post_agent
 
 agent = create_linkedin_post_agent()
 agent.run("AI technology")
