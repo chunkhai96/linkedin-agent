@@ -28,3 +28,7 @@ class PostingPlan(TypedDict):
     """Type definition for the LinkedIn posting plan."""
     day: str
     article_index: int
+    title: str
+    link: str
+    snippet: str
+    reason: str

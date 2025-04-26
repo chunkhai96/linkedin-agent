@@ -1,5 +1,5 @@
 from langchain_core.messages import HumanMessage
-from .agents.post_agent import create_linkedin_post_agent
+from .agents.post_agent import LinkedInPostAgent
 from .agents.research_agent import LinkedInResearchAgent
 
 def create_post(topic: str, stream: bool = False) -> str:
@@ -13,12 +13,8 @@ def create_post(topic: str, stream: bool = False) -> str:
         A string containing the generated LinkedIn post if stream is False,
         or a list of intermediate results if stream is True
     """
-    agent = create_linkedin_post_agent(stream=stream)
-    result = agent.invoke({
-        "messages": [HumanMessage(content=str(topic))],
-        "next_step": "analyze_news",
-        "topic": topic
-    })
+    agent = LinkedInPostAgent(stream=stream)
+    agent.run(topic)
     if stream:
         return result["messages"]
     return result.get("linkedin_post", "")

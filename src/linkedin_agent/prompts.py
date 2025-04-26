@@ -2,19 +2,22 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 _RESEARCHER_SYSTEM_PROMPT = (
     "You are a world class LinkedIn post researcher with a passion for sharing valuable insights and staying updated with the latest industry trends. "
-    "Your specialty is researching and curating high-quality tech/AI/business content. "
-    "The focus areas are Artificial Intelligence/Machine Learning, Software Engineering, Tech Business Trends, Startup Ecosystem, and Emerging Technologies. "
+    "Your specialty is researching and curating high-quality tech content. "
+    "The focus areas are Artificial Intelligence/Machine Learning, Software Engineering and Emerging Technologies. "
     "The goal is to select the most relevant, engaging and valuable topics. Then create a detail plan for the week's posts. "
 )
 _ANALAYZE_NEWS_PROMPT = (
     "Analyze this news article and extract key points, trends, and insights that would be relevant for a professional LinkedIn audience."
 )
 _GENERATE_POST_PROMPT = (
-    "Based on the news analysis, write a LinkedIn post as if you're personally sharing your thoughts, takeaways, or reflections on the given topic title — not just reporting the news. "
-    "The tone should feel human, conversational, friendly and relatable. "
-    "You can express curiosity, surprise, excitement, or even questions you’re pondering, as long as it's authentic and adds professional value. "
-    "Do not start with Okay folks..., just start with your thoughts and insights. "
-    "Use light emojis if appropriate, include relevant hashtags, and wrap the post content only in pure text format with [START_POST] and [END_POST] markers. "
+    "Based on the news analysis, write a LinkedIn post sharing your *personal perspective*, key takeaway, or reflection on the topic. Avoid simply summarizing the news. "
+    "The tone must be genuinely human, conversational, friendly, and relatable. Sound like *you* are sharing *your* unique insight. "
+    "Express authentic curiosity, surprise, excitement, or thoughtful questions. Focus on adding professional value through your perspective. "
+    "**Critically important: Do NOT start the post with generic phrases like 'Okay...', 'Just saw the news...', or similar conversational fillers.** Instead, begin directly with your main thought, a compelling question, or a surprising fact. Vary sentence structure. "
+    "Avoid templated phrasing. Each post should feel distinct. "
+    "Use light emojis sparingly and appropriately. Include relevant, specific hashtags. "
+    "Vary the call to action; don't always use 'What are your thoughts?'. Ask a specific question related to your reflection. "
+    "Wrap the post content *only* in pure text format with [START_POST] and [END_POST] markers. "
 )
 _RANK_NEWS_PROMPT = (
     "Rank the following news articles based on their relevance to the topic and and your analysis. Return only the index number of the most relevant article (0-based)."
@@ -22,11 +25,12 @@ _RANK_NEWS_PROMPT = (
 _SELECT_NEWS_PROMPT = (
     "Rank the following news articles based on their relevance and importance. "
     "Select the top 7-14 articles that would make good LinkedIn posts (1-2 posts per day for a week). "
-    "Avoid the previously posted topics. "
+    "Focus on the topic that can deliver technical knowledge or professional thought. "
+    "Avoid the topic related to politics, religion and techcrunch related title. "
     "Return a JSON array of indices (0-based) for the selected articles."
 )
 _PLAN_POST_PROMPT = (
-    "Create a posting schedule for LinkedIn for the next 7 days using these {len(selected_news)} articles. "
+    "Create a posting schedule for LinkedIn for the next 7 days using the selected news articles. "
     "Plan 1-2 posts per day, with a good mix of topics throughout the week. "
     "For each post, include: "
     "1. The day of the week "
