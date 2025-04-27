@@ -14,7 +14,7 @@ def create_post(topic: str, stream: bool = False) -> str:
         or a list of intermediate results if stream is True
     """
     agent = LinkedInPostAgent(stream=stream)
-    agent.run(topic)
+    result = agent.run(topic)
     if stream:
         return result["messages"]
     return result.get("linkedin_post", "")
