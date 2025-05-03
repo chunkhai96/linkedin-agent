@@ -10,10 +10,10 @@ poetry install
 
 ## Usage
 ```python
-from linkedin_agent.agents.post_agent import create_linkedin_post_agent
+from linkedin_agent.agents.post_agent import LinkedInPostAgent
 
-agent = create_linkedin_post_agent()
-agent.run("AI technology")
+agent = LinkedInPostAgent(stream=stream)
+result = agent.run("YOUR TOPIC HERE")
 ```
 
 ## Configuration
@@ -26,4 +26,6 @@ cp .env.example .env
 ```
 LINKEDIN_ACCESS_TOKEN = 'YOUR_TOKEN_HERE'
 GOOGLE_API_KEY = 'YOUR_TOKEN_HERE'
+SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE'
+SUPABASE_KEY = 'YOUR_SUPABASE_KEY_HERE'
 ```
